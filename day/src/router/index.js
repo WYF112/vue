@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
+import Index from '@/components/index'
 import Day1 from '@/components/day1/list'
 import Day11 from '@/components/day1/index'
 import Day12 from '@/components/day1/HelloWorld'
@@ -11,8 +11,8 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'index',
+      component: Index
     },
     {
       path: '/day1',
