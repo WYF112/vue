@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./compile.js"></script>
+    <script src="./yfvue.js"></script>
+</head>
+<body>
+    <div id="app">
+        {{msg}}
+        <p>{{msg}}</p>
+        <div>{{msg}}</div>
+        <div>{{data}}</div>
+        <!-- <div k-html='data'></div> -->
+        <input type="text" k-model='data'>
+        <button @click='a'>点击</button>
+    </div>
+    <script>
+        
+        var yf2 = new yf({
+            el:'#app',
+            data:{
+                data: '',
+                name: 'yunfei',
+                msg: '123'
+            },
+            methods: {
+                a(){
+                    alert(1)
+                }
+            },
+        })
+    </script>
+    
+</body>
+</html>
