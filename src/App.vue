@@ -1,41 +1,38 @@
 <template>
   <div id="app">
-    <router-view />
+    <button @click="add">add</button>
+    {{ store.state.count }}
+    <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
+
 <script>
+import HelloWorld from "./components/HelloWorld.vue";
+
 export default {
+  name: "App",
+  components: {
+    HelloWorld,
+  },
+  inject: ["store"],
+  methods: {
+    add() {
+      this.store.commit("getCount", ++this.store.state.count);
+    },
+  },
   mounted() {
-    console.log(this.$el);
-  }
+    // console.log(this.store);
+  },
 };
 </script>
-<style lang="less">
-html,
-body,
+
+<style>
 #app {
-  width: 100%;
-  height: 100%;
-}
-#app {
-  display: flex;
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
+  margin-top: 60px;
 }
 </style>
